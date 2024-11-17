@@ -1,0 +1,173 @@
+/* Estilos gerais do footer */
+footer {
+  background-color: #23272b;
+  color: white;
+  padding: 5px 0 0; 
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  text-align: left;
+  position: relative;
+  margin-top: 0; 
+  margin-bottom: 0; 
+}
+
+footer h5 {
+  font-size: 1.2rem; 
+  font-weight: 600;
+  margin-bottom: 5px; 
+  color: #f4c542;
+}
+
+footer p,
+footer a {
+  font-size: 0.9rem; 
+  color: #ccc;
+  line-height: 1.4;
+  margin-bottom: 3px; 
+}
+
+footer p strong {
+  font-weight: 600;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f4c542;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+  color: #f1a800;
+  text-shadow: 0 0 5px #f4c542, 0 0 10px #f4c542;
+}
+
+footer .nav-item {
+  margin-bottom: 4px; 
+}
+
+footer .nav-link {
+  color: #ccc;
+  font-size: 0.95rem; 
+  font-weight: 400;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+footer .nav-link:hover {
+  color: #f4c542;
+  background-color: rgba(244, 196, 66, 0.1);
+  border-radius: 4px;
+}
+
+footer .d-flex {
+  margin-bottom: 5px; 
+  display: flex;
+  justify-content: flex-start;
+}
+
+footer .d-flex a {
+  color: white;
+  font-size: 1.2rem; 
+  margin-right: 10px; 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .d-flex a:hover {
+  transform: scale(1.05); 
+  color: #f4c542;
+}
+
+footer .payment-title {
+  font-size: 1rem; 
+  font-weight: 600;
+  margin-top: 10px; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f4c542;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px; 
+  gap: 10px; 
+}
+
+.payment-icons img {
+  width: 40px; 
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-icons img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para dispositivos móveis (max-width: 480px) */
+@media (max-width: 480px) {
+  footer {
+    padding: 3px 0; 
+  }
+
+  footer h5 {
+    font-size: 1rem; 
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.85rem; 
+    margin-bottom: 2px; 
+  }
+
+  footer .nav-link {
+    font-size: 0.85rem;
+  }
+
+  footer .d-flex {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px; 
+  }
+
+  footer .d-flex a {
+    font-size: 1rem; 
+    margin-right: 5px; 
+  }
+
+  footer .payment-title {
+    font-size: 0.9rem; 
+  }
+
+  footer .payment-icons {
+    justify-content: center;
+    gap: 5px; 
+  }
+
+  footer .payment-icons img {
+    width: 30px; 
+  }
+}
+
+/* Responsividade para telas grandes (maior que 1200px) */
+@media (min-width: 1200px) {
+  footer {
+    padding: 20px 0; 
+  }
+
+  footer h5 {
+    font-size: 1.3rem; 
+  }
+
+  footer .d-flex {
+    justify-content: flex-start;
+  }
+
+  footer .payment-icons {
+    gap: 15px; 
+  }
+
+  footer .payment-icons img {
+    width: 50px; 
+  }
+}

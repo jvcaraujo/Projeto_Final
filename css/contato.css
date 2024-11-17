@@ -1,0 +1,44 @@
+/* ------------Sessão de Contato ------------ */
+#contato {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border-radius: 2rem;
+    }
+   
+    /* Container do formulário */
+    form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+    height: 100%; 
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    form .form-label {
+    font-size: 1.1rem;
+    color: #555;
+    }
+    form .form-control {
+    margin-bottom: 15px;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    }
+    
+
+
+
+    /* Ajuste para a imagem ficar do mesmo tamanho do formulário */
+  .img-contato {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+    
+    }
+    /*-----------------------------------------------*/

@@ -1,0 +1,93 @@
+/* --------------- Sessão de Serviços --------------- */
+
+
+
+#servicos {
+    padding: 60px 20px 40px; 
+    margin-top: 80px; 
+    background-image: linear-gradient(to right, #ff6347e6, #ff8c00e6); 
+    text-align: center;
+    border-radius: 16px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    transition: background-image 0.3s ease; 
+}
+
+/* Efeito de hover na seção de serviços */
+#servicos:hover {
+    background-image: linear-gradient(to right, #ff8c00e6, #ff6347e6); 
+}
+
+/* Ajuste do cartão de serviço */
+.service-card {
+    background: linear-gradient(145deg, #ffffff, #f7f7f7); 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px #0000001a; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 15px; 
+    position: relative;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efeito no hover do cartão */
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px #00000033;
+    background: linear-gradient(145deg, #f9f9f9, #e0e0e0); 
+}
+
+/* Estilizando o título do cartão */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #FF6347;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Estilizando o texto do cartão */
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Adicionando uma linha decorativa no topo de cada cartão */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 5px;
+    background-color: #FF6347;
+    transform: translateX(-50%);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    
+
+    .service-card {
+        padding: 1rem;
+        margin-bottom: 10px;
+        min-height: 140px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,96 @@
+/* Estilos gerais para a seção Sobre Nós */
+.sobre-nos {
+  background-color: #f1f1f1; 
+  padding: 70px 30px;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+}
+
+
+
+.sobre-nos .sobre-nos-conteudo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.sobre-nos .sobre-nos-texto {
+  flex: 1 1 45%;
+  margin-right: 30px;
+}
+
+.sobre-nos .sobre-nos-imagem {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.sobre-nos h3 {
+  font-size: 2rem;
+  color: #1abc9c;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.sobre-nos p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #7f8c8d; 
+}
+
+
+
+
+.sobre-nos img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px #0000004d; 
+  margin-top: 25px;
+}
+
+
+
+
+.sobre-nos .sobre-nos-diferencial {
+  background-color: #eafaf1; 
+  border-left: 6px solid #1abc9c; 
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+}
+
+.sobre-nos .sobre-nos-compromisso {
+  margin-top: 45px;
+  text-align: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .sobre-nos .sobre-nos-conteudo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sobre-nos .sobre-nos-texto,
+  .sobre-nos .sobre-nos-imagem {
+    width: 90%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .sobre-nos img {
+    width: 80%;
+  }
+
+  .sobre-nos h2 {
+    font-size: 2.2rem;
+  }
+
+  .sobre-nos h3 {
+    font-size: 1.8rem;
+  }
+}

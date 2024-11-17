@@ -1,0 +1,412 @@
+/* Estilo do botão de alternância de tema */
+.controle_escuro {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    background: rgb(75, 35, 35);
+    border-radius: 50px;
+    position: relative;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.controle_escuro .botao {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+}
+
+
+
+
+
+
+
+/* Estilos do Tema Claro */
+.light-color {
+    color: black;
+    background-color: rgb(219, 219, 219);
+}
+
+/* Estilos do Controle de Modo Escuro */
+.controle_escuro {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    background: rgb(75, 35, 35);
+    border-radius: 50px;
+    position: relative;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.controle_escuro .botao {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+}
+
+/* Estilos do Modo Claro */
+.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+.light-theme .controle_escuro {
+    background: black;
+}
+
+.light-theme .controle_escuro .botao {
+    transform: translateX(37px);
+}
+
+/* Estilos do Modo Escuro */
+body.dark-mode {
+    color: #ccc;
+    background: linear-gradient(135deg, #0a0a0a, #1b1b1b 40%, #2d2d2d 90%);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+}
+
+/* Texto centralizado no modo escuro */
+body.dark-mode .text-center {
+    color: #fff;
+}
+
+/* Navbar no modo escuro */
+body.dark-mode .navbar {
+    background-image: linear-gradient(135deg, #1c1c1c, #2b2b2b 50%, #3b3b3b 90%);
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.9);
+    color: #ccc;
+    transition: background-image 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* Links da navbar no modo escuro */
+body.dark-mode .navbar a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover nos links da navbar */
+body.dark-mode .navbar a:hover {
+    color: #f39c12;
+    text-decoration: underline;
+}
+
+/* Seção Plano de Saúde para Pets - Modo Escuro */
+body.dark-mode .plano-saude {
+    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+}
+
+body.dark-mode .plano-saude p {
+    color: #D1D5DB;
+    opacity: 0.85;
+}
+
+body.dark-mode .plano-card {
+    background: linear-gradient(to bottom, #374151 30%, #4B5563 90%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .plano-card h3 {
+    color: #F3F4F6;
+}
+
+body.dark-mode .plano-card .preco {
+    color: #FF7F50;
+}
+
+body.dark-mode .plano-card ul {
+    color: #D1D5DB;
+}
+
+body.dark-mode .plano-card .btn-acessar {
+    background-color: #10B981;
+}
+
+body.dark-mode .plano-card .btn-acessar:hover {
+    background-color: #06B6D4;
+}
+
+
+/* ------------ Seção de Contato - Modo Claro ------------ */
+#contato {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form .form-label {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+form .form-control {
+    margin-bottom: 15px;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.img-contato {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ------------ Seção de Contato - Modo Escuro ------------ */
+body.dark-mode #contato {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
+
+body.dark-mode form {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    color: #ddd;
+}
+
+body.dark-mode form .form-label {
+    color: #bbb;
+}
+
+body.dark-mode form .form-control {
+    background-color: #444;
+    color: #ddd;
+    border: 1px solid #555;
+}
+
+body.dark-mode form .form-control::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode .img-contato {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(0.7); /* Escurece a imagem no modo escuro */
+}
+
+/* Botão no modo escuro */
+body.dark-mode .btn-enviar {
+    padding: 12px 24px;
+    background-color: #10B981; /* Verde vibrante */
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .btn-enviar:hover {
+    background-color: #06B6D4; /* Azul claro */
+}
+
+/* Estilo do botão de alternância de tema (Controle de Modo Escuro) */
+.controle_escuro {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    background: rgb(75, 35, 35);
+    border-radius: 50px;
+    position: relative;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.controle_escuro .botao {
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+}
+
+/* Estilos do Modo Claro */
+body.light-theme #contato {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+body.light-theme form {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme form .form-label {
+    color: #555;
+}
+
+body.light-theme form .form-control {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+body.light-theme form .form-control::placeholder {
+    color: #777;
+}
+
+body.light-theme .img-contato {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animação do Gradiente */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilos gerais para a seção Sobre Nós (Modo Escuro) */
+  
+
+
+
+  /* Estilos para o modo escuro */
+  body.dark-mode .sobre-nos {
+    
+    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+
+  }
+  
+  
+  body.dark-mode .sobre-nos .sobre-nos-diferencial {
+    background-color: #34495e; /* Fundo um pouco mais claro que o fundo principal */
+  }
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modo Escuro  vendas */
+body.dark-mode .product-item {
+    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no modo escuro */
+}
+
+
+
+
+body.dark-mode .description {
+    color: #D1D5DB;
+}
+
+body.dark-mode .product-item h3 {
+    color: #F3F4F6;
+}
+
+
+body.dark-mode .btn {
+    background-color: #10B981;
+}
+
+
+.dark-mode .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+}
+
+
+
+
+
+body.dark-mode .product-section {
+    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+}
+
+
+.dark-mode .product-item .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF7F50;
+    margin-bottom: 15px;
+    text-align: center;
+}

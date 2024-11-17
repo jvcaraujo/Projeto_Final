@@ -1,0 +1,179 @@
+/* Seção Plano de Saúde para Pets */
+.plano-saude {
+    background: linear-gradient(135deg, #F9FAFB 0%, #E0E7FF 100%); 
+    padding: 60px 20px;
+    border-radius: 2rem; 
+}
+
+
+
+
+.plano-saude p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.plano-card {
+    background: linear-gradient(to bottom, #ffffff 30%, #E6E9F0 80%); 
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    overflow: hidden; 
+    max-width: 350px; 
+    margin: 0 auto; 
+}
+
+
+
+.plano-card h3 {
+    font-size: 1.8rem; 
+    color: #1E3A8A; 
+    margin-bottom: 15px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.plano-card .preco {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: #F59E0B; 
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.plano-card ul {
+    list-style: none;
+    font-size: 1rem; 
+    color: #555;
+    margin-bottom: 30px;
+    padding-left: 0;
+    flex-grow: 1;
+    overflow: hidden; 
+    text-align: left;
+}
+
+.plano-card ul li {
+    margin-bottom: 10px;
+}
+
+.plano-card .btn-acessar {
+    padding: 12px 24px;
+    background-color: #1E3A8A; 
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.plano-card .btn-acessar:hover {
+    background-color: #2563EB; 
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .plano-saude {
+        padding: 40px 20px; 
+    }
+
+    
+
+    .plano-saude p {
+        font-size: 1.1rem; 
+    }
+
+    .plano-card {
+        max-width: 300px; 
+        margin-bottom: 20px; 
+    }
+
+    .plano-card h3 {
+        font-size: 1.6rem; 
+    }
+
+    .plano-card .preco {
+        font-size: 1.3rem; 
+    }
+
+    .plano-card .btn-acessar {
+        padding: 10px 20px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .plano-saude {
+        padding: 30px 15px; 
+    }
+
+   
+
+    .plano-saude p {
+        font-size: 1rem; 
+    }
+
+    .plano-card {
+        max-width: 100%; 
+        padding: 15px; 
+        margin-bottom: 15px; 
+        height: auto; 
+    }
+
+    .plano-card h3 {
+        font-size: 1.4rem; 
+    }
+
+    .plano-card .preco {
+        font-size: 1.2rem; 
+    }
+
+    .plano-card .btn-acessar {
+        padding: 8px 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .plano-saude {
+        padding: 20px 10px; 
+    }
+
+    .plano-saude h2 {
+        font-size: 1.6rem; 
+    }
+
+    .plano-saude p {
+        font-size: 0.9rem; 
+    }
+
+    .plano-card {
+        max-width: 100%; 
+        padding: 10px; 
+        margin-bottom: 10px; 
+    }
+
+    .plano-card h3 {
+        font-size: 1.2rem; 
+    }
+
+    .plano-card .preco {
+        font-size: 1rem;
+    }
+
+    .plano-card .btn-acessar {
+        padding: 8px 14px; 
+        font-size: 1rem; 
+    }
+}

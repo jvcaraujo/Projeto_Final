@@ -1,0 +1,88 @@
+/* Estilo para o ícone do WhatsApp */
+.whatsapp-icon {
+  /* Layout */
+  position: fixed;
+  bottom: 90px;   
+  right: 20px;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;    
+  height: 60px;   
+  padding: 0;     
+  border-radius: 50%; 
+  z-index: 1000;   
+  
+  /* Estética */
+  background-color: #25D366; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  
+  /* Otimização */
+  will-change: transform, box-shadow; 
+}
+
+/* Ajustando o ícone dentro do link */
+.whatsapp-icon i {
+  color: white;
+  font-size: 2rem; 
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de hover no ícone */
+.whatsapp-icon:hover {
+  background-color: #128C7E; 
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+/* Responsividade: Garante que o ícone não fique muito grande em telas pequenas */
+@media (max-width: 768px) {
+  .whatsapp-icon {
+    bottom: 15px;   
+    right: 15px;    
+    width: 60px;    
+    height: 60px;   
+  }
+
+  .whatsapp-icon i {
+    font-size: 2rem; 
+  }
+}
+
+@media (max-width: 576px) {
+  .whatsapp-icon {
+    width: 50px;    
+    height: 50px;   
+  }
+
+  .whatsapp-icon i {
+    font-size: 1.5rem; 
+  }
+}
+
+/* Melhorias de acessibilidade */
+.whatsapp-icon {
+  pointer-events: auto; 
+}
+
+/* Se for necessário esconder o ícone em alguns casos (exemplo: quando não há internet) */
+.whatsapp-icon.invisible {
+  pointer-events: none; 
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 90px;  
+  right: 20px;   
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 0; 
+}
+
+.whatsapp-icon img {
+  width: 60px;   
+  height: 60px;  
+}
+

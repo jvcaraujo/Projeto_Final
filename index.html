@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Pet</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <link rel="icon" href="img/logo/icon.webp" type="image/x-icon">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="#">PetShop</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Produtos">Produtos para seu Pet</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Galeria">Galeria</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#dicas">Dicas Pet</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Perguntas Frequentes">Perguntas Frequentes</a>
+                     </li>
+                     <!-- Botão de Login -->
+                     <li class="nav-item">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                     </li>
+                     <!-- Botão escuro -->
+                     <li class="nav-item">
+                        <div class="controle_escuro" title="Modo Escuro">
+                           <div class="botao"></div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <div class="espaço"></div>
+      <!-- Modal de Login -->
+      <div class="modal fade custom-login-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="loginModalLabel">Login ou Criação de Conta</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <ul class="nav nav-tabs" id="loginTab" role="tablist">
+                     <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                     </li>
+                     <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Criar Conta</a>
+                     </li>
+                  </ul>
+                  <div class="tab-content" id="loginTabContent">
+                     <!-- Formulário de Login -->
+                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form id="loginForm">
+                           <div class="mb-3">
+                              <label for="loginUsername" class="form-label">Nome de Usuário</label>
+                              <input type="text" class="form-control" id="loginUsername" placeholder="Digite seu nome de usuário">
+                              <div id="loginUsernameError" class="text-danger" style="display: none;">Por favor, insira seu nome de usuário.</div>
+                           </div>
+                           <div class="mb-3">
+                              <label for="loginPassword" class="form-label">Senha</label>
+                              <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha">
+                              <div id="loginPasswordError" class="text-danger" style="display: none;">Por favor, insira sua senha.</div>
+                           </div>
+                           <button type="submit" class="btn btn-primary">Entrar</button>
+                        </form>
+                        <!-- Mensagem de sucesso -->
+                        <div id="loginSuccessMessage" class="text-success">
+                           Login realizado com sucesso!
+                        </div>
+                     </div>
+                     <!-- Formulário de Criação de Conta -->
+                     <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                        <form id="signupForm">
+                           <div class="mb-3">
+                              <label for="signupUsername" class="form-label">Nome de Usuário</label>
+                              <input type="text" class="form-control" id="signupUsername" placeholder="Escolha um nome de usuário">
+                              <div id="signupUsernameError" class="text-danger" style="display: none;">Por favor, insira um nome de usuário.</div>
+                           </div>
+                           <div class="mb-3">
+                              <label for="signupEmail" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="signupEmail" placeholder="Digite seu email">
+                              <div id="signupEmailError" class="text-danger" style="display: none;">Por favor, insira um email válido.</div>
+                           </div>
+                           <div class="mb-3">
+                              <label for="signupPassword" class="form-label">Senha</label>
+                              <input type="password" class="form-control" id="signupPassword" placeholder="Escolha uma senha">
+                              <div id="signupPasswordError" class="text-danger" style="display: none;">Por favor, insira uma senha.</div>
+                           </div>
+                           <button type="submit" class="btn btn-primary">Criar Conta</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Sessão de Servicos -->
+      <section id="servicos" class="container">
+         <h2 class="text-center">Nossos Serviços</h2>
+         <div class="row">
+            <div class="col-md-4">
+               <div class="service-card">
+                  <h3>Banho e Tosa</h3>
+                  <p>Oferecemos os melhores serviços de higiene para o seu pet.</p>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="service-card">
+                  <h3>Rações e Petiscos</h3>
+                  <p>Produtos selecionados com carinho para seu amigo peludo.</p>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="service-card">
+                  <h3>Consultas Veterinárias</h3>
+                  <p>Consultas de rotina para garantir a saúde do seu pet.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <section id="Produtos"  class="product-section container">
+         <div class="container">
+            <h2 class="text-center">Produtos para seu Pet</h2>
+            <div class="products-grid">
+               <!-- Itens dos produtos -->
+               <div class="product-item">
+                  <img src="./img/ração/ração_1.png" alt="Ração Premium para cães adultos, sabor frango e arroz">
+                  <h3>Ração Pedigree</h3>
+                  <p class="price">R$ 99,90</p>
+                  <p class="description">Alimento de qualidade para cães de todas as idades.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+               <div class="product-item">
+                  <img src="./img/ração/ração_2.png" alt="Ração Premium para cães adultos, sabor frango e arroz">
+                  <h3>Ração Premium</h3>
+                  <p class="price">R$ 99,90</p>
+                  <p class="description">Diversão garantida para seu amigo de quatro patas.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+               <div class="product-item">
+                  <img src="./img/ração/ração_3.png" alt="Ração Premium para cães adultos, sabor frango e arroz">
+                  <h3>Ração Premium whiskas</h3>
+                  <p class="price">R$ 49,90</p>
+                  <p class="description">Coleira confortável e resistente para o seu pet.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+               <div class="product-item">
+                  <img src="./img/ração/cama.png" alt="Cama para cachorro, tamanho médio">
+                  <h3>Cama para Cachorro</h3>
+                  <p class="price">R$ 149,90</p>
+                  <p class="description">Cama macia e confortável para seu pet.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+               <div class="product-item">
+                  <img src="./img/ração/tira_pelo.png" alt="Tira-pelos para pets">
+                  <h3>Tira-Pelos</h3>
+                  <p class="price">R$ 59,90</p>
+                  <p class="description">Ferramenta eficaz para remoção de pelos.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+               <div class="product-item">
+                  <img src="./img/ração/tira_pelo_2.png" alt="Tira-pelos para pets">
+                  <h3>Tira-Pelos</h3>
+                  <p class="price">R$ 39,90</p>
+                  <p class="description">Ferramenta eficaz para remoção de pelos.</p>
+                  <button class="btn">Adicionar ao Carrinho</button>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <!-- Sessão Galeria de Pets -->
+      <section id="Galeria" class="container">
+         <h2 class="text-center">Galeria de Pets</h2>
+         <div id="petCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="./img/img_1.jpg" class="d-block w-100" alt="Pet 1">
+               </div>
+               <div class="carousel-item">
+                  <img src="./img/img_2.jpg" class="d-block w-100" alt="Pet 3">
+               </div>
+               <div class="carousel-item">
+                  <img src="./img/img_3.jpg" class="d-block w-100" alt="Pet 3">
+               </div>
+               <div class="carousel-item">
+                  <img src="./img/img_4.jpg" class="d-block w-100" alt="Pet 3">
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#petCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#petCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <!-- Seção Sobre Nós -->
+      <section id="sobre" class="sobre-nos container">
+         <h2 class="text-center">Sobre Nós</h2>
+         <div class="sobre-nos-conteudo">
+            <div class="sobre-nos-texto">
+               <h3>Quem Somos</h3>
+               <p>Somos apaixonados por animais! No PetShop, dedicamos nosso tempo e conhecimento para garantir o melhor cuidado para o seu pet. Fundado em 2010, nossa missão sempre foi proporcionar serviços e produtos de alta qualidade, com a preocupação de criar um ambiente acolhedor e seguro para os nossos amigos peludos.</p>
+               <p>Nosso time é formado por profissionais especializados, desde veterinários até groomers experientes, para garantir que seu pet tenha a melhor experiência possível. Estamos sempre em busca das mais novas soluções em cuidados para animais, garantindo a saúde, felicidade e bem-estar de todos os pets que passam por aqui.</p>
+               <div class="sobre-nos-diferencial">
+                  <h3>Nosso Diferencial</h3>
+                  <p>Nosso PetShop se destaca por oferecer não apenas serviços, mas uma experiência única de cuidado. Nós nos preocupamos com cada detalhe, garantindo que seu pet se sinta acolhido e confortável em cada visita.</p>
+               </div>
+            </div>
+            <div class="sobre-nos-imagem">
+               <img src="./img/sobre.jpg" alt="PetShop História">
+            </div>
+         </div>
+         <div class="sobre-nos-historia">
+            <h3>Nossa História</h3>
+            <p>A história do PetShop começa em 2010, quando nossos fundadores, Maria e João, perceberam a falta de um serviço especializado e confiável para pets na região. Com o objetivo de criar um lugar onde os animais pudessem receber cuidados de qualidade, fundaram o PetShop com um foco claro: transformar a experiência dos pets em algo único e especial.</p>
+            <p>No início, a empresa começou com apenas alguns serviços básicos, como banho e tosa, mas logo se expandiu à medida que a demanda por cuidados veterinários e produtos de qualidade crescia. Desde então, nosso PetShop tem sido um ponto de referência para os amantes de animais, oferecendo uma gama de serviços e produtos adaptados às necessidades dos nossos clientes.</p>
+            <p>Em 2015, abrimos nossa segunda unidade, ampliando ainda mais o nosso alcance e oferecendo planos de saúde pet para facilitar o acesso à saúde animal. Continuamos a inovar e a buscar novas formas de melhorar o cuidado com os pets, sempre com o compromisso de proporcionar o melhor para nossos queridos amigos de quatro patas.</p>
+         </div>
+         <div class="sobre-nos-compromisso">
+            <h3>Nosso Compromisso</h3>
+            <p>Nosso compromisso é com a qualidade, o bem-estar dos animais e a confiança dos nossos clientes. Para isso, investimos constantemente em nossa infraestrutura, em treinamentos para nossa equipe e em novos serviços para atender a todas as necessidades dos pets. Acreditamos que todos os animais merecem um cuidado especial, e é isso que buscamos entregar todos os dias.</p>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <!-- Seção planos de saúde -->
+      <section id="plano-saude" class="container plano-saude">
+         <div class="container">
+            <h2 class="text-center">Planos de Saúde para Pets</h2>
+            <p>Escolha o plano ideal para o seu pet. Oferecemos opções que atendem às diversas necessidades e orçamentos. Com um dos nossos planos, seu pet estará sempre bem cuidado e protegido.</p>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="plano-card">
+                     <h3>Plano Ideal</h3>
+                     <p class="preco">R$ 99,90/mês</p>
+                     <ul>
+                        <li>Consultas veterinárias de rotina</li>
+                        <li>Vacinas básicas</li>
+                        <li>Desparatização regular</li>
+                        <li>Aconselhamento veterinário online</li>
+                     </ul>
+                     <button class="btn-acessar">Contratar</button>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="plano-card">
+                     <h3>Plano Essencial</h3>
+                     <p class="preco">R$ 149,90/mês</p>
+                     <ul>
+                        <li>Consultas veterinárias de rotina</li>
+                        <li>Vacinas básicas e extras</li>
+                        <li>Desparatização e vermifugação</li>
+                        <li>Exames periódicos</li>
+                        <li>Consultas de urgência</li>
+                     </ul>
+                     <button class="btn-acessar">Contratar</button>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="plano-card">
+                     <h3>Plano Completo</h3>
+                     <p class="preco">R$ 199,90/mês</p>
+                     <ul>
+                        <li>Consultas veterinárias ilimitadas</li>
+                        <li>Vacinas completas e emergenciais</li>
+                        <li>Desparatização, vermifugação e controle de pulgas</li>
+                        <li>Exames laboratoriais completos</li>
+                        <li>Cirurgias e internações</li>
+                        <li>Atendimento 24h</li>
+                     </ul>
+                     <button class="btn-acessar">Contratar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Seção Dicas para Seu Animal -->
+      <section id="dicas" class="container  dicas-section ">
+         <h2 class="text-center mb-4">Dicas para Cuidar do Seu Pet</h2>
+         <div id="dicasCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="dica-card dica-1 text-center p-4">
+                     <div class="icon mb-3">
+                        <i class="fas fa-bowl-food"></i> 
+                     </div>
+                     <h3>Dica 1: Alimentação Balanceada</h3>
+                     <p>Alimentar seu pet com ração de qualidade é fundamental para a saúde dele. Consulte sempre um veterinário para escolher o melhor alimento.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="dica-card dica-2 text-center p-4">
+                     <div class="icon mb-3">
+                        <i class="fas fa-shower"></i> 
+                     </div>
+                     <h3>Dica 2: Banhos Regulares</h3>
+                     <p>Os banhos são essenciais para a higiene do seu pet. Certifique-se de usar produtos adequados para o tipo de pelo e pele dele.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="dica-card dica-3 text-center p-4">
+                     <div class="icon mb-3">
+                        <i class="fas fa-running"></i> 
+                     </div>
+                     <h3>Dica 3: Exercícios Diários</h3>
+                     <p>Manter seu pet ativo é importante para a saúde física e mental dele. Caminhadas, brincadeiras e corridas são ótimas opções.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="dica-card dica-4 text-center p-4">
+                     <div class="icon mb-3">
+                        <i class="fas fa-stethoscope"></i> 
+                     </div>
+                     <h3>Dica 4: Visitas Regulares ao Veterinário</h3>
+                     <p>Visite o veterinário periodicamente para check-ups, vacinas e tratamentos preventivos. A saúde do seu pet é essencial!</p>
+                  </div>
+               </div>
+            </div>
+            <!-- Controles do Carrossel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#dicasCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#dicasCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+      </section>
+      <!-- FAQ Section -->
+      <section id="Perguntas Frequentes" class="container">
+         <h2 class="text-center ">Perguntas Frequentes</h2>
+         <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                  O que é necessário para deixar meu pet no petshop?
+                  </button>
+               </h2>
+               <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Para deixar seu pet no petshop, é necessário apresentar as vacinas atualizadas do seu animal e um documento de identificação válido (como RG ou CPF do tutor).
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                  O petshop oferece serviços de banho e tosa?
+                  </button>
+               </h2>
+               <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Sim, oferecemos serviços de banho e tosa para todos os tipos de pets. Você pode escolher entre diferentes pacotes, de acordo com o porte e a necessidade do seu animal.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                  Como faço para agendar o atendimento para o meu pet?
+                  </button>
+               </h2>
+               <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     O agendamento pode ser feito facilmente pelo nosso site ou através do telefone. Basta escolher a data e o horário que mais lhe convier, e nós confirmamos sua reserva.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                  Meu pet tem necessidades especiais. Vocês oferecem cuidados específicos?
+                  </button>
+               </h2>
+               <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Sim, temos uma equipe especializada para atender pets com necessidades especiais, como pets idosos, com deficiência ou com condições de saúde que exigem cuidados adicionais. Entre em contato para que possamos fornecer o melhor atendimento possível.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                  Quais são os cuidados que o petshop toma durante o banho e tosa?
+                  </button>
+               </h2>
+               <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Nossos profissionais são altamente treinados para garantir que o banho e tosa sejam feitos com o máximo de cuidado e segurança. Utilizamos produtos de alta qualidade e adequados ao tipo de pele e pelagem do seu pet. Durante o processo, monitoramos constantemente o bem-estar do seu animal.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+                  Como posso cancelar ou alterar o agendamento do meu pet?
+                  </button>
+               </h2>
+               <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqSix" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Para cancelar ou alterar o agendamento, basta entrar em contato conosco pelo telefone ou e-mail com antecedência. Recomendamos que faça isso até 24 horas antes do agendamento para evitar taxas adicionais.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
+                  O petshop tem estacionamento para clientes?
+                  </button>
+               </h2>
+               <div id="faqCollapseSeven" class="accordion-collapse collapse" aria-labelledby="faqSeven" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Sim, temos estacionamento gratuito para nossos clientes. O local está convenientemente situado perto da entrada do petshop para facilitar o seu acesso.
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="faqEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseEight" aria-expanded="false" aria-controls="faqCollapseEight">
+                  Vocês oferecem algum tipo de programa de fidelidade?
+                  </button>
+               </h2>
+               <div id="faqCollapseEight" class="accordion-collapse collapse" aria-labelledby="faqEight" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                     Sim, oferecemos um programa de fidelidade para nossos clientes. A cada serviço realizado, você acumula pontos que podem ser trocados por descontos ou serviços gratuitos. Consulte nossa equipe para saber mais sobre os benefícios.
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <!-- Seção Contato -->
+      <section id="contato" class="container ">
+         <h2 class="text-center">Entre em Contato</h2>
+         <div class="row align-items-stretch">
+            <div class="col-md-6">
+               <form id="contactForm">
+                  <div class="mb-3">
+                     <label for="name" class="form-label">Nome</label>
+                     <input type="text" class="form-control" id="name" required>
+                  </div>
+                  <div class="mb-3">
+                     <label for="email" class="form-label">Email</label>
+                     <input type="email" class="form-control" id="email" required>
+                  </div>
+                  <div class="mb-3">
+                     <label for="phone" class="form-label">Telefone</label>
+                     <input type="tel" class="form-control" id="phone" placeholder="(xx) xxxx-xxxx" required>
+                  </div>
+                  <div class="mb-3">
+                     <label for="subject" class="form-label">Assunto</label>
+                     <select class="form-control" id="subject" required>
+                        <option value="">Selecione o assunto</option>
+                        <option value="suporte">Suporte Técnico</option>
+                        <option value="orcamento">Orçamento</option>
+                        <option value="informacoes">Informações</option>
+                        <option value="outro">Outro</option>
+                     </select>
+                  </div>
+                  <div class="mb-3">
+                     <label for="message" class="form-label">Mensagem</label>
+                     <textarea class="form-control" id="message" rows="4" required></textarea>
+                  </div>
+                  <div class="mb-3 form-check">
+                     <input type="checkbox" class="form-check-input" id="privacyCheck" required>
+                     <label class="form-check-label" for="privacyCheck">Eu concordo com os termos de privacidade</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+               </form>
+            </div>
+            <div class="col-md-6">
+               <img class="img-contato img-fluid" src="./img/img_5.jpg" alt="Imagem de Contato" >
+            </div>
+         </div>
+         <div class="row mt-5">
+            <div class="col-12">
+               <h3 class="text-center">Nosso Local</h3>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.3123952430467!2d-46.56788148447674!3d-23.545725966968247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce590703f0d5f1%3A0x8fe3f3898bc74f47!2sAv.%20Paulista%2C%202347%20-%20Bela%20Vista%2C%20São%20Paulo%20-%20SP%2C%2001311-000!5e0!3m2!1spt-BR!2sbr!4v1636439255362!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+         </div>
+      </section>
+      <div class="espaço"></div>
+      <!-- Rodapé -->
+      <footer class="bg-dark text-white ">
+         <div class="container">
+            <div class="row">
+               <!-- Informações da empresa -->
+               <div class="col-md-4">
+                  <h5 class="mb-3">PetShop</h5>
+                  <p>&copy; 2024 PetShop. Todos os direitos reservados.</p>
+                  <p><strong>Endereço:</strong> Rua Exemplo, 123, Brasília - DF</p>
+                  <p><strong>Telefone:</strong> (61) 90000-0000</p>
+                  <p><strong>Email:</strong> contato@petshop.com</p>
+                  <p><strong>CNPJ:</strong> 12.345.678/0001-99</p>
+                  <p><strong>Horário de Funcionamento:</strong> Seg-Sex: 08:00 - 18:00 | Sáb: 09:00 - 14:00</p>
+                  <div class="atendimento">
+                     <br>
+                     <h5 class="mb-3">Atendimento ao consumidor:</h5>
+                     <p>Dúvidas? Contate-nos pelo telefone <a href="tel:+5590000-0000">(61) 90000-0000</a> ou pelo e-mail <a href="mailto:support@petshop.com">support@petshop.com</a>.</p>
+                  </div>
+                  <div class="politica">
+                     <p>
+                        <a href="#" class="text-white" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> |
+                        <a href="#" class="text-white" target="_blank" rel="noopener noreferrer">Termos de Uso</a> |
+                        <a href="#" class="text-white" target="_blank" rel="noopener noreferrer">Política de Trocas e Devoluções</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <h5 class="mb-3">Links Rápidos</h5>
+                  <ul class="list-unstyled">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Galeria">Galeria</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#Perguntas Frequentes">Perguntas Frequentes</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="col-md-4">
+                  <h5 class="mb-3">Siga-nos</h5>
+                  <div class="d-flex">
+                     <a href="https://www.instagram.com" target="_blank" class="text-white me-3">
+                     <i class="fab fa-instagram"></i> Instagram
+                     </a>
+                     <a href="https://www.linkedin.com" target="_blank" class="text-white me-3">
+                     <i class="fab fa-linkedin-in"></i> LinkedIn
+                     </a>
+                     <a href="https://www.twitter.com" target="_blank" class="text-white me-3">
+                     <i class="fab fa-twitter"></i> Twitter
+                     </a>
+                     <a href="https://www.youtube.com" target="_blank" class="text-white me-3">
+                     <i class="fab fa-youtube"></i> YouTube
+                     </a>
+                     <a href="https://github.com" target="_blank" class="text-white me-3">
+                     <i class="fab fa-github"></i> GitHub
+                     </a>
+                  </div>
+                  <div class="progress-wrap">
+                     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                     </svg>
+                  </div>
+                  <a class="whatsapp-icon" href="https://wa.me/5511999999999" target="_blank" >
+                  <img src="img/logo/whatsapp.png" alt="WhatsApp"  title="Whatsapp">
+                  </a>
+                  <h5 class="payment-title">Formas de Pagamento</h5>
+                  <div class="payment-icons"> 
+                     <img src="img/logo/master.png" alt="MasterCard" title="MasterCard"  >
+                     <img src="img/logo/visa.png" alt="Visa" title="Visa"  >
+                     <img src="img/logo/discover.png" alt="Discover" title="Discover"  >
+                     <img src="img/logo/pix.png" alt="Pix" title="Pix"  >
+                  </div>
+                  <div class="agradecimentos">
+                     <p class="texto-principal">Agradecimento especial ao desenvolvedor deste site. Obrigado por tornar isso possível!</p>
+                     <p class="texto-principal">Desenvolvido por <a href="https://github.com/jvcaraujo" target="_blank" class="link-desenvolvedor">Aluno: João Vitor Costa</a></p>
+                     <p><small class="copyright">© 2024 Todos os direitos reservados.</small></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+      <script src="script/script.js"></script>
+      <script src="script/topo.js"></script>
+      <script src="script/validação_login.js"></script>
+   </body>
+</html>

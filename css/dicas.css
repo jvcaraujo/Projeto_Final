@@ -1,0 +1,62 @@
+/* Estilo para a seção de dicas */
+#dicas {
+    
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+/* Título da seção */
+#dicas h2 {
+    
+    color: #2cb838; 
+    
+}
+
+/* Estilo para os cards de dica */
+.dica-card {
+   
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #0000001a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Estilos específicos para cada dica */
+.dica-1 {
+    background: linear-gradient(135deg, #ffcc00 20%, #f39c12 80%); 
+    border-left: 5px solid #f39c12; 
+}
+
+.dica-2 {
+    background: linear-gradient(135deg, #a2d9ce 25%, #1abc9c 75%); 
+    border-left: 5px solid #1abc9c; 
+}
+
+.dica-3 {
+    background: linear-gradient(135deg, #f39c12 30%, #e67e22 70%); 
+    border-left: 5px solid #e67e22; 
+}
+
+.dica-4 {
+    background: linear-gradient(135deg, #34db50 15%, #2980b9 85%); 
+    border-left: 5px solid #2980b9; 
+}
+
+
+/* Títulos das dicas */
+.dica-card h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1f1e53fd; 
+    margin-top: 15px;
+}
+
+/* Parágrafo das dicas */
+.dica-card p {
+    font-size: 1rem;
+    color: #000000; 
+    line-height: 1.6;
+}

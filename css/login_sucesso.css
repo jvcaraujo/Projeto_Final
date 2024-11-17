@@ -1,0 +1,37 @@
+/* Estilos para a mensagem de sucesso */
+#loginSuccessMessage {
+    display: none; 
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+    padding: 15px;
+    border-radius: 5px; 
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease-in-out; 
+    transition: opacity 1s ease-in-out; 
+ }
+ 
+ /* Animação de fadeIn */
+ @keyframes fadeIn {
+    from {
+       opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+ }
+ 
+ /* Animação de fadeOut */
+ @keyframes fadeOut {
+    from {
+       opacity: 1;
+    }
+    to {
+       opacity: 0;
+    }
+ }
+ 
